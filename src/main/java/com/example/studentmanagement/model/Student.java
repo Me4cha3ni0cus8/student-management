@@ -14,8 +14,21 @@ public class Student {
     private String group;
     private double averageScore;
 
-    // Getters and Setters
+    //Constructors
+    public Student() {
+    }
+    public Student(String id, String firstName, String lastName, String middleName, String group, double averageScore) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
+        this.group = group;
+        this.averageScore = averageScore;
+    }
 
+
+
+    // Getters and Setters
     public String getId() {
         return id;
     }
