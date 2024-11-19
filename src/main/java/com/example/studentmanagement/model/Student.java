@@ -26,8 +26,6 @@ public class Student {
         this.averageScore = averageScore;
     }
 
-
-
     // Getters and Setters
     public String getId() {
         return id;
