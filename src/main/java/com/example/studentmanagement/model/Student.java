@@ -14,7 +14,7 @@ public class Student {
     private String group;
     private double averageScore;
 
-    //Constructors
+    // Конструкторы
     public Student() {
     }
     public Student(String id, String firstName, String lastName, String middleName, String group, double averageScore) {
@@ -26,7 +26,7 @@ public class Student {
         this.averageScore = averageScore;
     }
 
-    // Getters and Setters
+    // Геттеры и Сеттеры
     public String getId() {
         return id;
     }
