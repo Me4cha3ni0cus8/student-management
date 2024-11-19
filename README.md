@@ -7,6 +7,7 @@ Docker
 2. Запустите терминал, перейдите в директорию, где находится файл docker-compose.yml и запустить команду docker-compose up -d 
 
 Примеры запросов в формате CURL (Windows cmd):
+
   Получение	списка объектов студентов
   ```sh
 curl -X GET http://localhost:8080/students
