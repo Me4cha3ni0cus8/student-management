@@ -1,28 +1,30 @@
 # Инструкция по развёртыванию проекта
 ## Программное обеспечение:
-IntelliJ IDEA
+Интегрированная среда разработки
 Docker
 
-1. Клонируйте репозитарий https://github.com/Me4cha3ni0cus8/student-management.git в IntelliJ IDEA
-2. Запустите терминал, перейдите в директорию, где находится файл docker-compose.yml и запустить команду docker-compose up -d 
+1. Клонируйте репозитарий
+2. Откройте терминал:
+  2.1) Введите ```sh cd C:\{cloned_project_path}```
+  2.2) Введите команду ```sh docker compose up```
 
 ## Примеры запросов в формате CURL (Windows cmd):
 
   Получение	списка объектов студентов
   ```sh
-curl -X GET http://localhost:8080/students
+curl -X GET http://localhost:8080/students -H "Authorization: Bearer {your_jwt}"
 ```
 Добавление новой сущности студента
 ```sh
-curl -X POST http://localhost:8080/students -H "Content-Type: application/json" -d "{\"firstName\":\"Andrei\",\"lastName\":\"Kruglow\",\"middleName\":\"Olegovich\",\"group\":\"A-11\",\"averageScore\":3.5}"
+curl -X POST http://localhost:8080/students -H "Authorization: Bearer {your_jwt}" -H "Content-Type: application/json" -d "{\"firstName\": \"Anna\", \"lastName\": \"Ivanova\", \"middleName\": \"Arkadievna\", \"group\": \"A1\", \"averageScore\": 4.5}"
 ```
 Изменение сущности объекта студента
 ```sh
-curl -X PUT http://localhost:8080/students/673cf19d9ee80030c680b475 -H "Content-Type: application/json" -d "{\"firstName\":\"Andrei\",\"lastName\":\"Kruglow\",\"middleName\":\"Andreev\",\"group\":\"A-11\",\"averageScore\":4.7}"
+curl -X PUT http://localhost:8080/students/{unique_mongodb_id} -H "Authorization: Bearer {your_jwt}" -H "Content-Type: application/json" -d "{\"firstName\": \"Anna\", \"lastName\": \"Karenina\", \"middleName\": \"Arkadievna\", \"group\": \"A1\", \"averageScore\": 5.0}"
 ```
 Удаление объекта студента
 ```sh
-curl -X DELETE "http://localhost:8080/students/673cf19d9ee80030c680b475"
+curl -X DELETE http://localhost:8080/students/{unique_mongodb_id} -H "Authorization: Bearer {your_jwt}"
 ```
 
 
