@@ -7,6 +7,7 @@ Docker
 2. Откройте терминал:
 
   2.1) Введите ```sh cd C:\{cloned_project_path}```
+  
   2.2) Введите команду ```sh docker compose up```
 
 ## Примеры запросов в формате CURL (Windows cmd):
